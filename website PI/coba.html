@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TUGAS PENGENALAN INFORMATIKA</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <div class="navbar">
+        <ul class="ul-navbar">
+            <li class="li-navbar"><a href="#tujuan">Tujuan</a></li>
+            <li class="li-navbar"><a href="#biodata">Biodata</a></li>
+            <li class="li-navbar"><a href="#cita-cita">Cita-Cita</a></li>
+            <li class="li-navbar"><a href="#harapan">Harapan</a></li>
+        </ul>
+    </div>
+    <!-- NAVIGATION BAR END -->
+
+    <!-- CONTENT -->
+    <div>
+        <!-- Tujuan -->
+        <section id="tujuan" style="display: none;">
+            <h2>Tujuan Membuat Web Ini</h2>
+            <p>Web ini dibuat untuk memenuhi tugas mata kuliah Pengenalan Informatika.</p>
+        </section>
+
+        <!-- Biodata -->
+        <section id="biodata" style="display: none;">
+            <h2>Biodata</h2>
+            <p>Haiii kawan-kawan perkenalkan aku Nazwa Nabilla Wijaya biasa di panggil nanas dengan NIM 1237050116 asal dari Bandung hobinya coret-coret.</p>
+        </section>
+
+        <!-- Cita-Cita -->
+        <section id="cita-cita" style="display: none;">
+            <h2>Cita-Cita</h2>
+            <p>Aku bercita-cita menjadi web developer di bagian pengembangan front-end, aamiin.</p>
+        </section>
+
+        <!-- Harapan -->
+        <section id="harapan" style="display: none;">
+            <h2>Harapan Masa Depan</h2>
+            <p>Harapanku untuk masa depan adalah memiliki karier yang sukses dalam bidang pengembangan web atau bahkan bidang lain.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer" style="display: none;">
+            <p>Terimakasih telah melihat tugas pengenalan informatika ini!</p>
+        </footer>
+    </div>
+    <!-- CONTENT END -->
+    <script>
+        
+        const menuItems = document.querySelectorAll('.li-navbar a');
+        const sections = document.querySelectorAll('section');
+        const footer = document.getElementById('footer');
+
+        menuItems.forEach((item, index) => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault(); 
+
+                sections.forEach(section => {
+                    section.style.display = 'none'; 
+                });
+
+                const targetId = this.getAttribute('href'); 
+                const targetSection = document.querySelector(targetId); 
+                targetSection.style.display = 'block'; 
+                
+                if (targetId === '#harapan') {
+                    footer.style.display = 'block';
+                } else {
+                    footer.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
